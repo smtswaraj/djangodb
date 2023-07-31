@@ -1,0 +1,23 @@
+{% extends 'book_list/base.html' %}
+{% block title %} ALL book {% endblock  %}
+{% block content %} 
+        <ul>
+            {% for i in books %}
+                    <li><a href="{{i.get_absolute_url}}">{{i.title}} {{i.id}}</a></li><br>
+            {% endfor %}
+        </ul>
+        <center>
+                <h3>
+                        Total Books Avaliable:{{total}}
+                </h3>
+                <h3>
+                        Total Books Avaliable:{{agr.rating__avg}}
+                </h3>
+                <h3>
+                        Total Books min:{{agr.rating__min}}
+                </h3>
+                <h3>
+                        Total Books max:{{agr.rating__max}}
+                </h3>
+        </center>
+ {% endblock  %}
